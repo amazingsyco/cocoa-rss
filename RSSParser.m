@@ -18,10 +18,9 @@
 
 -(NSDate *)dateFromString:(NSString *)dateString {
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
+	[dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
 	[dateFormatter setDateFormat:@"EEE, d MMM yyyy HH:mm:ss zzzz"];
 	NSDate *date = [dateFormatter dateFromString:dateString];
-	[dateFormatter release];	
 	return date;
 }
 
@@ -89,7 +88,6 @@
 		feedItem.pubDate = [self dateFromString:[currentElementValue stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
 	}
 	
-	[currentElementValue release];
 	currentElementValue = nil;	
 }
 
@@ -104,12 +102,6 @@
 #pragma mark -
 #pragma mark Memory Management
 
-- (void)dealloc {
-	[feedItem release];
-	[currentDataType release];
-	[feedItems release];
-	[super dealloc];
-}
 
 
 @end

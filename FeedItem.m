@@ -16,15 +16,5 @@
 	return [self.pubDate compare:anotherFeedItem.pubDate];
 }
 
--(void) dealloc {
-	[title release];
-	[link release];
-	[guid release];
-	[description release];
-	[content release];
-	[creator release];
-	[pubDate release];
-	[super dealloc];
-}
 
 @end

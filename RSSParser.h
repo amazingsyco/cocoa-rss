@@ -18,8 +18,8 @@
     BOOL parsingContent;
 }
 
-@property (nonatomic, retain) FeedItem *feedItem;
-@property (nonatomic, retain) NSString *currentDataType;
-@property (nonatomic, retain) NSMutableArray *feedItems;
+@property (nonatomic, strong) FeedItem *feedItem;
+@property (nonatomic, strong) NSString *currentDataType;
+@property (nonatomic, strong) NSMutableArray *feedItems;
 
 @end

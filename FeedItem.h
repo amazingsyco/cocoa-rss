@@ -20,13 +20,13 @@
 		
 }
 
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *link;
-@property (nonatomic, retain) NSString *guid;
-@property (nonatomic, retain) NSString *description;
-@property (nonatomic, retain) NSString *content;
-@property (nonatomic, retain) NSString *creator;
-@property (nonatomic, retain) NSDate *pubDate;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *link;
+@property (nonatomic, strong) NSString *guid;
+@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *content;
+@property (nonatomic, strong) NSString *creator;
+@property (nonatomic, strong) NSDate *pubDate;
 
 - (NSComparisonResult)compare:(FeedItem *)anotherFeedItem;
 

@@ -18,10 +18,9 @@
 
 -(NSDate *)dateFromString:(NSString *)dateString {
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
+	[dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
 	[dateFormatter setDateFormat:@"yyyy-MM-dd'T'H:mm:sszzzz"];
 	NSDate *date = [dateFormatter dateFromString:dateString];
-	[dateFormatter release];	
 	return date;
 }
 
@@ -80,7 +79,6 @@
 	}
 	
 	
-	[currentElementValue release];
 	currentElementValue = nil;	
 }
 
@@ -95,11 +93,5 @@
 #pragma mark -
 #pragma mark Memory Management
 
-- (void)dealloc {
-	[feedItem release];
-	[currentDataType release];
-	[feedItems release];
-	[super dealloc];
-}
 
 @end
